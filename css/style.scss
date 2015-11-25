@@ -1,0 +1,647 @@
+@import 'reset';
+@import 'clearfix';
+
+/* Variabili */
+
+$bg: white;
+
+$accent: #1769ff;
+$accent: #2bde73;
+$accent: #22264b;
+
+$cta: #E94F37;
+
+$dark: #333333;
+
+/* Layout */
+
+body {
+	background-color: $bg;
+}
+
+.container {
+	width: 90%;
+	max-width: 1140px;
+	margin: 0 auto;
+}
+
+nav#main-nav {
+	z-index: 3;
+	height: 100px;
+	background-color: white;
+	opacity: 1;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	transition: all 0.15s ease;
+
+	&.shrink {
+		height: 50px;
+		opacity: 0.95;
+	}
+
+	&:hover {
+		opacity: 0.98;
+	}
+
+	.container {
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+	ul {
+		display: block;
+		margin: 0;
+		padding: 0;
+
+		li {
+			display: inline-block;
+
+			a {
+				font-size: 1em;
+				font-weight: 300;
+				color: #666;
+				text-decoration: none;
+				text-transform: uppercase;
+				position: relative;
+				transition: all 250ms ease;
+
+				&:after {
+					content: '';
+					position: absolute;
+					left: 0;
+					bottom: -3px;
+					height: 1px;
+					width: 0%;
+					background-color: $accent;
+    				transition: width 250ms;
+				}
+  
+			  &:hover,
+			  &:focus,
+			  &:active,
+			  &.active {
+			  	color: #333;
+			    cursor: pointer;
+			    &:after {
+			      width: 100%;
+			    }
+			  }
+			}
+		}
+
+		&.left {
+			li {margin-right: 3em;}
+		}
+
+		&.right {
+			li {margin-left: 3em;}
+		}
+
+		&.logo {
+			li a {
+				font-family: Merriweather, Georgia, serif;
+				letter-spacing: -1px;
+				font-size: 1.5em;
+				font-weight: 400;
+				color: $accent;
+			}
+		}
+	}
+
+	.initials, .mobile {
+		display: none;
+	}
+
+	.mobile li {
+		margin: 0.5em 0;
+		margin-left: 2em;
+	}
+
+	.logo li a {
+		color: #333;
+	}
+}
+
+.btn {
+	display: inline-block;
+	padding: 1em 2em;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 300;
+	font-size: 0.85em;
+	border-radius: 4px;
+	border: 1px solid;
+	transition: all 250ms ease-in-out;
+	cursor: pointer;
+
+	&.cta {
+	margin-top: 3em;
+	color: white;
+	background-color: $cta;
+	border-color: $cta;
+	text-align: left;
+
+		&:hover {
+			background-color: darken($cta, 5%);
+		}
+	}
+}
+
+header {
+	margin-top: 100px;
+	height: 640px;
+	background-color: $accent;
+	background-image: url("../img/hero-dark.jpg");
+	background-size: cover;
+	background-position: center 80%;
+	position: relative;
+
+	.container {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		//justify-content: center;
+	}
+}
+
+section {
+	padding: 6em 0 8em;
+}
+
+section.showroom, section.catalogo, section.contatti {	
+	margin-top: 100px;
+}
+
+section.azienda{
+	.container {
+		display: flex;
+		flex-direction: row;
+
+		h3 {
+			margin-bottom: 1.5em;
+		}
+
+		.smaller {
+			min-width: 31.578947368421052631578947368421%;
+			flex: 1;
+		}
+
+		.bigger {
+			min-width: 65.789473684210526315789473684211% !important;
+		}
+
+		& .first-in-row {
+		margin-right: 30px;
+		}
+
+		.img {
+			background-image: url('../img/fondatore.jpg');
+			background-size: cover;
+			background-position: 90% bottom;
+			top: 0;
+			bottom: 0;
+			position: relative;
+			overflow: hidden;
+			cursor: pointer;
+
+			&.clock {
+				background-image: url('../img/clock.jpg');
+				background-size: cover;
+				background-position: bottom center;
+				cursor: default;
+			}
+
+			&#map {
+				background-image: url('../img/map.jpg');
+				background-size: cover;
+				background-position: center center;
+			}
+
+			.inner {
+				position: absolute;			
+				background-color: rgba($accent,0.95);
+				color: white;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				padding: 2em 1em;
+				transform: translateY(100%);
+				transition: transform 350ms ease;
+			}
+
+			&:hover > .inner {
+				transform: translateY(0%);			
+			}
+		}
+	}
+}
+
+section.main {
+
+	h2 {
+		display: block;
+		width: 100%;
+	}
+
+	.grid {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin-bottom: 40px;
+	}
+
+	.grid-element {
+		background-color: $accent;
+		text-decoration: none;
+		min-width: 25%;
+		flex: 1;
+		margin-right: 30px;
+		margin-bottom: 30px;
+		box-sizing: border-box;
+		height: 310px;
+		overflow: hidden;
+		cursor: pointer;
+
+		&.bigger{
+			min-width: 65.789473684210526315789473684211%;	
+		}
+
+		&.last-in-row{
+			margin-right: 0px;		
+		}
+
+		.inner {
+		height: 100%;			
+		background-color: rgba($accent,0.95);
+		transform: translateY(110%);
+		transition: all 400ms ease-in-out;
+		box-sizing: border-box;
+		padding: 30px;	
+
+			h3 {
+				margin: 0;
+				padding: 0;
+				color: white;
+			}
+		}
+
+		&:hover > .inner {
+			transform: translateY(0%);
+		}
+
+		/* Immagini */
+
+		&.living {
+			background-image: url("../img/library.jpg");
+			background-size: cover;
+			background-position: center center;
+		}
+
+		&.bedroom {
+			background-image: url("../img/bedroom.jpg");
+			background-size: cover;
+			background-position: center center;
+		}
+
+		&.kitchen {
+			background-image: url("../img/kitchen.jpg");
+			background-size: cover;
+			background-position: center center;
+		}
+
+		&.office {
+			background-image: url("../img/studio.jpg");
+			background-size: cover;
+			background-position: center center;
+		}
+
+		&.divani {
+			background-image: url("../img/divani.jpg");
+			background-size: cover;
+			background-position: center center;
+		}
+
+		&.letti {
+			background-image: url("../img/letti.jpg");
+			background-size: cover;
+			background-position: center center;
+		}
+
+		&.librerie {
+			background-image: url("../img/librerie.jpg");
+			background-size: cover;
+			background-position: center center;
+		}
+
+		&.tavoli {
+			background-image: url("../img/tavoli.jpg");
+			background-size: cover;
+			background-position: center center;
+		}
+
+		&.complementi {
+			background-image: url("../img/complementi.jpg");
+			background-size: cover;
+			background-position: center center;
+		}
+
+		&.accessori {
+			background-image: url("../img/accessori.jpg");
+			background-size: cover;
+			background-position: center center;
+		}
+
+		&.showroom-1 {
+			background-image: url("../img/showroom-1.jpg");
+			background-size: cover;
+			background-position: center center;
+		}
+
+		&.showroom-2 {
+			background-image: url("../img/showroom-2.jpg");
+			background-size: cover;
+			background-position: bottom center;
+		}
+
+		&.showroom-3 {
+			background-image: url("../img/showroom-3.jpg");
+			background-size: cover;
+			background-position: bottom center;
+		}
+
+		&.showroom-4 {
+			background-image: url("../img/showroom-4.jpg");
+			background-size: cover;
+			background-position: center center;
+		}
+	}
+
+	.container {		
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.btn.catalogo {
+		color: #666;
+		background-color: rgba(0,0,0,0);
+		border-color: #ccc;		
+		text-align: center;
+
+		&:hover {
+			background-color: #f3f3f3;
+		}
+	}
+}
+
+aside.sponsor {
+	background-color: #b8b8ba;
+
+	ul {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		li {
+			display: block;
+			line-height: 90px;
+			font-size: 1.25em;
+			font-weight: 900;
+			color: #ddd;
+			cursor: pointer;
+			transition: color 0.25s ease;
+
+			&:hover {
+				color: #fafafa;
+			}
+		}
+	}
+}
+
+footer {
+
+	font-size: 1.125em;
+	line-height: 1.25;
+	font-weight: 300;
+	background-color: #49494c;
+	color: #aaa;
+	padding-bottom: 1.5em;
+
+	ul, p {
+		margin: 0;
+	}
+
+	hr {
+		border: none;
+		border-bottom: 1px solid #666;
+		margin: 1em 0;
+		margin: 0;
+	}
+
+	.upper, .lower {
+		display: flex;
+		justify-content: space-between;
+		padding: 1.5em 0;
+	}
+
+	.upper {
+		font-size: 1.125em;
+
+		.signature {
+				font-family: Merriweather, Georgia, serif;
+				letter-spacing: -1px;
+				font-size: 1.5em;
+
+		}
+	}
+	.social i {
+		margin-left: 1em;
+		cursor: pointer;
+		transition: color 0.25s ease;
+		color: #eee;
+		height: 1.65em;
+		width: 1.65em;
+		line-height: 1.75em;
+		border-radius: 10%;
+		transition: border-radius 250ms ease;
+
+		&.fa-facebook {
+			background-color: #3b5998;
+		}
+
+		&.fa-twitter {
+			background-color: #55acee;
+		}
+
+		&.fa-instagram {
+			background-color: #3f729b;
+		}
+
+		&.fa-pinterest-p {
+			background-color: #bd081c;
+		}
+
+		&:hover {
+			border-radius: 50%;
+		}
+	}
+
+	a {
+	color: inherit;
+	text-decoration: underline;
+	transition: color 0.25s ease;
+	cursor: pointer;
+
+	&:hover {
+		color: #eee;
+		}
+	}
+
+	ul {
+		list-style: none;
+
+		li {
+		display: inline;
+		text-align: right;
+		margin-left: 10px;
+		}
+	}
+
+	.copy {
+		color: #999;
+		font-size: 0.88888888888em;
+		text-align: center;
+	}
+}
+
+section.showroom {
+	margin-bottom: -70px;
+
+	.grid .grid-element {
+		cursor: default;
+	}
+}
+
+/* Typography */
+
+body {
+	font-family: "Merriweather Sans", Verdana, sans-serif;
+	font-size: 16px;
+	color: $dark;
+}
+
+h1 {
+	width: 60%;
+	font-size: 3em;
+	line-height: 1.2;
+	color: white;
+	font-weight: 700;
+	text-align: left;
+}
+
+h2 {
+	font-size: 1.5em;
+	margin-bottom: 2em;
+	color: $accent;
+}
+
+h3 {
+	font-size: 1.25em;
+}
+
+hr {
+	color: #eee;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	margin: 1em 0;
+}
+
+section.upper-section {
+	padding-bottom: 2em;
+}
+
+section.azienda {
+
+	p {
+		font-family: Merriweather, Georgia, serif;
+		font-size: 1.125em;
+		line-height: 1.6;
+	}
+}
+
+section.contatti {
+	a {
+		text-decoration: none;
+		color: $dark;
+	}
+}
+
+p strong {
+	font-weight: 700;
+}
+
+@import 'catalogo';
+
+/* Mobile */
+
+$mWidth: 880px;
+
+@media screen and (max-width: $mWidth) {
+
+	nav#main-nav ul.left, nav#main-nav ul.center, nav#main-nav ul.right {
+		display: none;
+	}
+
+	nav#main-nav .initials, nav#main-nav .mobile {
+		display: block;
+	}
+
+	header {
+		margin-top: 0;
+	}
+
+	section.showroom, section.catalogo, section.contatti {	
+		margin-top: 30px;
+	}
+
+	section.main .grid .grid-element {
+		min-width: 100%;
+
+		.inner {
+		transform: translateY(0%);			
+		background-color: rgba($accent,0.65);
+		opacity: 1;
+		}
+	}
+
+	section.azienda .container {
+		flex-direction: column;
+		.copy {
+			display: block;
+			width: 100%;
+			margin-right: 0;
+		}
+		.img {
+			position: relative;
+			position: auto;
+			display: block;
+			width: 100%;
+			height: 310px;
+			margin-top: 2em;
+
+			.inner{
+				transform: translateY(0%);
+			}
+		}
+	}
+	
+}

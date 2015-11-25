@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Arredi e Sofa | Contatti</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,700,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+</head>
+
+<body class="">
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- Add your site or application content here -->
+    <nav id="main-nav">
+        <div class="container">
+            <ul class="left">
+                <li><a href="showroom.html">Showroom</a></li>
+                <li><a href="catalogo.html">Catalogo</a></li>
+            </ul>
+            <ul class="center logo">
+                <li><a href="/">Arredi&amp;Sof&agrave;</a></li>
+            </ul>
+            <ul class="right">
+                <li><a href="contatti.html">Servizi</a></li>
+                <li><a class="active" href="contatti.html" class="bottom">Contatti</a></li>
+            </ul>
+
+            <ul class="initials logo"><li><a href="/">A&amp;S</a></li></ul>
+            <ul class="mobile">
+                <li><a href="showroom.html">Showroom</a></li>
+                <li><a href="catalogo.html">Catalogo</a></li>
+                <li><a class="active"href="contatti.html">Servizi</a></li>
+                <li><a class="active" href="contatti.html" class="bottom">Contatti</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="azienda contatti">
+      <div class="container">
+        <div class="copy orari smaller first-in-row">
+          <h2 id="slogan">Contatti</h2>
+
+          <h3>Showroom</h3>
+
+          <p><i class="fa fa-fw fa-map-marker"></i> 12 N Moore St, New York</p>
+
+          <p><i class="fa fa-fw fa-phone"></i> 5552368</p>
+
+          <p><i class="fa fa-fw fa-envelope"></i><a> showroom@aes.com</a></p>
+
+          <hr><br>
+
+          <h3>Amministrazione</h3>
+
+          <p><i class="fa fa-fw fa-map-marker"></i> 322 Greenwhich St, New York</p>
+
+          <p><i class="fa fa-fw fa-phone"></i> 2368555</p>
+
+          <p><i class="fa fa-fw fa-envelope"></i><a> admin@aes.com</a></p>
+
+          <hr><br>
+
+          <h3>Magazzino</h3>
+
+          <p><i class="fa fa-fw fa-map-marker"></i> 4 Wooster St, New York</p>
+
+          <p><i class="fa fa-fw fa-phone"></i> 3242368555</p>
+
+          <p><i class="fa fa-fw fa-envelope"></i><a> magazzino@aes.com</a></p>
+
+        </div>
+        <div class="img bigger clock" id="map">
+        </div>
+
+        
+            <script type="text/javascript">
+
+            var map;
+            function initMap() {
+                var myLatLng = {lat: 40.719786, lng: -74.006816},
+                    magaz = {lat: 40.721257, lng: -74.003595},
+                    admin = {lat: 40.717657, lng: -74.010611};
+
+                map = new google.maps.Map(document.getElementById('map'), {
+                center: myLatLng,
+                zoom: 16,
+                styles: [{"elementType":"geometry","stylers":[{"hue":"#E94F37"},{"saturation":-68},{"lightness":-4},{"gamma":0.72}]},{"featureType":"road","elementType":"labels.icon"},{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"hue":"#22264b"},{"gamma":3.1}]},{"featureType":"water","stylers":[{"hue":"#22264b"},{"gamma":0.44},{"saturation":-33}]},{"featureType":"poi.park","stylers":[{"hue":"#44ff00"},{"saturation":-23}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"hue":"#22264b"},{"gamma":0.77},{"saturation":65},{"lightness":99}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"gamma":0.11},{"weight":5.6},{"saturation":99},{"hue":"#22264b"},{"lightness":-86}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"lightness":-48},{"hue":"#E94F37"},{"gamma":1.2},{"saturation":-23}]},{"featureType":"transit","elementType":"labels.text.stroke","stylers":[{"saturation":-64},{"hue":"#ff9100"},{"lightness":16},{"gamma":0.47},{"weight":2.7}]},{"featureType": "poi","elementType": "all","stylers": [{"visibility": "off"}]}]
+              });
+
+                 var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                icon: 'img/marker-red.png',
+                title: "Showroom"
+              });
+                 var markerMag = new google.maps.Marker({
+                position: magaz,
+                map: map,
+                icon: 'img/marker-red.png',
+                title: "Magazzino"
+              });
+                 var markerAdm = new google.maps.Marker({
+                position: admin,
+                icon: 'img/marker-red.png',
+                map: map,
+                title: "Amministrazione"
+              });
+
+            }
+
+            </script>
+
+      </div>
+    </section>
+
+    <aside class="sponsor">
+
+      <div class="container">
+        <ul>
+          <li>Brand 1</li>
+          <li>Brand 2</li>
+          <li>Brand 3</li>
+          <li>Brand 4</li>
+          <li>Brand 5</li>
+          <li>Brand 6</li>
+        </ul>
+      </div>
+    </aside>
+
+    <footer>
+      <div class="container">
+        <div class="upper">
+          <p class="signature">A&amp;S</p>
+          <p class="social">
+            <i class="fa fa-fw fa-facebook"></i>
+            <i class="fa fa-fw fa-twitter"></i>
+            <i class="fa fa-fw fa-instagram"></i>
+            <i class="fa fa-fw fa-pinterest-p"></i>
+          </p>
+        </div>
+        
+        <hr>
+
+        <div class="lower">          
+          <p class="left">Progettato e realizzato da<br/>
+            <a href="//www.behance.net/RiccardoZaffalon" target="_blank">Riccardo Zaffalon</a></p>
+            <ul class="right">
+              <li><a>Mappa</a></li>
+              <li><a>Condizioni</a></li>
+              <li><a>Cookies</a></li>
+              <li><a href="/">Home</a></li>
+            </ul>
+        </div>          
+          <p class="copy">12 N Moore St, New York | P.IVA: 55523685552368<br>
+            2015 &copy; <a href="//www.riccardozaffalon.com" target="_blank">riccardozaffalon.com</a></p>
+      </div>
+    </footer>
+    
+
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbib5POlgzUKLfHuPaevzuOp_dk7VsH14&callback=initMap">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
