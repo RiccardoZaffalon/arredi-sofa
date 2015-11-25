@@ -55,6 +55,7 @@ nav#main-nav {
 
 	ul {
 		display: block;
+		flex: 1;
 		margin: 0;
 		padding: 0;
 
@@ -99,10 +100,13 @@ nav#main-nav {
 		}
 
 		&.right {
+			text-align: right;
 			li {margin-left: 3em;}
 		}
 
 		&.logo {
+
+			text-align: center;
 			li a {
 				font-family: Merriweather, Georgia, serif;
 				letter-spacing: -1px;
@@ -112,6 +116,12 @@ nav#main-nav {
 			}
 		}
 	}
+
+	/*ul.center.logo {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+	}*/
 
 	.initials, .mobile {
 		display: none;
